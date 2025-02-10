@@ -78,10 +78,11 @@ The analysis followed a structured approach:
 4. **Logistic Regression**:
 
    | Variable           | Coefficient | Std Err | Z-value | P>|z| | Odds Ratio |
-   |--------------------|-------------|---------|---------|------|------------|
-   | Intercept          | -2.0904     | 0.027   | -76.314 | 0.000 | N/A        |
-   | Treatment_yes      | 0.0703      | 0.031   | 2.242   | 0.025 | 1.073      |
-   | New_images_yes     | -0.0044     | 0.031   | -0.141  | 0.888 | 0.996      |
+|--------------------|-------------|---------|---------|------|------------|
+| Intercept          | -2.0904     | 0.027   | -76.314 | 0.000 | N/A        |
+| Treatment_yes      | 0.0703      | 0.031   | 2.242   | 0.025 | 1.073      |
+| New_images_yes     | -0.0044     | 0.031   | -0.141  | 0.888 | 0.996      |
+
 
 
    - The treatment group (`treatment_yes`) has a significant positive effect on conversion rates, with an odds ratio of 1.073. This means users exposed to the new design are 7.3% more likely to convert than those in the control group.
@@ -132,11 +133,3 @@ To build upon this study, consider the following areas for further research:
 
 3. **Confounding Variables**:
    - Although `new_images` was balanced, other unobserved variables might still influence conversion rates.
-
-By addressing these limitations in future studies, the business can gain deeper insights into user behavior and optimize its growth strategies effectively.
-
-
-### Final Answer
-$$
-\boxed{\text{The redesigned landing page significantly increases conversion rates and should be implemented.}}
-$$
