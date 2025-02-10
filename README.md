@@ -76,16 +76,17 @@ The analysis followed a structured approach:
    - Conclusion: The difference in conversion rates between the treatment and control groups is statistically significant at the 0.05 level.
 
 4. **Logistic Regression**:
+
    | Variable           | Coefficient | Std Err | Z-value | P>|z| | Odds Ratio |
    |--------------------|-------------|---------|---------|------|------------|
    | Intercept          | -2.0904     | 0.027   | -76.314 | 0.000 | N/A        |
    | Treatment_yes      | 0.0703      | 0.031   | 2.242   | 0.025 | 1.073      |
    | New_images_yes     | -0.0044     | 0.031   | -0.141  | 0.888 | 0.996      |
 
+
    - The treatment group (`treatment_yes`) has a significant positive effect on conversion rates, with an odds ratio of 1.073. This means users exposed to the new design are 7.3% more likely to convert than those in the control group.
    - The presence of new images (`new_images_yes`) does not significantly affect conversion rates (p-value = 0.888).
 
----
 
 ### 6. Recommendations
 Based on the findings, the following recommendations are made:
