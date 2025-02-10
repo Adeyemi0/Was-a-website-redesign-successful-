@@ -1,4 +1,4 @@
-# Was-a-website-redesign-successful?
+# Was-a-Website-Redesign-Successful?
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
@@ -11,125 +11,131 @@
 8. [Future Studies](#8-future-studies)
 9. [Limitations of the Study](#9-limitations-of-the-study)
 
+---
 
 ### 1. Introduction
-Optimizing user engagement on a website or platform is critical for business success. For startups, where resources are limited, understanding the impact of design changes on user behavior can significantly influence growth strategies. This study evaluates the effect of a redesigned landing page on user conversion rates. By analyzing data collected during an A/B test, we aim to determine whether the new design has a statistically significant impact on user conversions.
+Optimizing user engagement on a website is critical for business success. For startups, understanding the impact of design changes on user behavior can significantly influence growth strategies. This study evaluates the effect of a redesigned landing page on user conversion rates. Using data collected from an A/B test, we assess whether the new design had a statistically significant impact on conversions.
 
-The dataset includes three key variables:
-- **`treatment`**: Indicates whether the user was exposed to the new design (`yes`) or the old design (`no`).
-- **`new_images`**: Indicates whether new images were used on the landing page (`yes` or `no`).
-- **`converted`**: Binary variable indicating whether the user converted (`1`) or not (`0`).
+Key variables include:
+- **`treatment`**: Whether the user was exposed to the new design (`yes`) or the old design (`no`).
+- **`new_images`**: Whether new images were used on the landing page (`yes` or `no`).
+- **`converted`**: Whether the user converted (`1`) or not (`0`).
 
+---
 
 ### 2. Objectives
-The primary objectives of this analysis are:
-1. To determine if the redesigned landing page (`treatment = yes`) significantly increases the conversion rate compared to the original design (`treatment = no`).
-2. To assess whether the presence of new images (`new_images = yes`) has any additional effect on conversion rates.
-3. To provide actionable insights and recommendations for the business based on the findings.
+This analysis aims to:
+1. Determine if the redesigned landing page (`treatment = yes`) significantly increases the conversion rate compared to the original design.
+2. Assess whether the presence of new images (`new_images = yes`) affects conversion rates.
+3. Provide actionable insights and recommendations based on the findings.
+
+---
 
 ### 3. Executive Summary
-This study analyzed the impact of a redesigned landing page on user conversion rates using statistical methods. The results indicate that the new design led to a statistically significant increase in conversions (p-value = 0.025). However, the presence of new images did not have a significant effect on conversion rates (p-value = 0.888). Logistic regression confirmed these findings, with the odds ratio for the treatment group being 1.073, indicating a modest but meaningful improvement in conversion likelihood.
+Our analysis found that the redesigned landing page led to a statistically significant increase in conversions (p-value = 0.025). However, the presence of new images did not significantly impact conversions (p-value = 0.888). Logistic regression further confirmed these findings, with the odds ratio for the treatment group being 1.073, indicating a modest improvement in conversion likelihood.
 
-For the business, this suggests that the new design is effective and should be implemented across the platform. Future studies could explore other factors influencing conversion rates to further optimize the user experience.
+The results suggest the new design should be implemented platform-wide. Further research could explore other factors influencing conversion rates to optimize the user experience.
+
+---
 
 ### 4. Methodology
-The analysis followed a structured approach:
+The following approach was used:
 
 1. **Data Exploration**:
-   - Calculated summary statistics for conversion rates across combinations of `treatment` and `new_images`.
-   - Checked the balance of `new_images` across treatment groups to ensure there were no confounding effects.
+   - Summary statistics of conversion rates across combinations of `treatment` and `new_images`.
+   - A balance check to ensure `new_images` did not confound the results.
 
 2. **Statistical Testing**:
-   - Conducted a two-sample proportion test to compare conversion rates between the treatment and control groups.
-   - Performed logistic regression to estimate the treatment effect while controlling for the potential influence of `new_images`.
+   - Two-sample proportion test comparing conversion rates between the treatment and control groups.
+   - Logistic regression to control for the potential influence of `new_images`.
 
 3. **Interpretation**:
-   - Interpreted the results of the statistical tests and regression model to draw conclusions about the effectiveness of the redesigned landing page.
+   - Interpretation of statistical results to evaluate the redesigned landing page's effectiveness.
+
+---
 
 ### 5. Insights
 
-1. **Summary Statistics**:
-   | Treatment | New Images | Converted |
-   |-----------|------------|-----------|
-   | no        | no         | 0.107104  |
-   | no        | yes        | 0.112538  |
-   | yes       | no         | 0.120047  |
-   | yes       | yes        | 0.113724  |
+#### 1. Summary Statistics:
+| Treatment | New Images | Converted Rate |
+|-----------|------------|----------------|
+| no        | no         | 0.107104       |
+| no        | yes        | 0.112538       |
+| yes       | no         | 0.120047       |
+| yes       | yes        | 0.113724       |
 
-   - Overall conversion rates:
-     - Control group (`treatment = no`): 0.109821
-     - Treatment group (`treatment = yes`): 0.1168855
+- Overall conversion rates:
+  - Control (`treatment = no`): 0.109821
+  - Treatment (`treatment = yes`): 0.1168855
 
-2. **Balance Check**:
-   | Treatment | New Images | Proportion |
-   |-----------|------------|------------|
-   | no        | no         | 0.5        |
-   | no        | yes        | 0.5        |
-   | yes       | no         | 0.5        |
-   | yes       | yes        | 0.5        |
+#### 2. Balance Check:
+| Treatment | New Images | Proportion |
+|-----------|------------|------------|
+| no        | no         | 0.5        |
+| no        | yes        | 0.5        |
+| yes       | no         | 0.5        |
+| yes       | yes        | 0.5        |
 
-   - Since `new_images` is balanced, it does not confound the results.
+- Since `new_images` is balanced, it does not confound the results.
 
-3. **Two-Sample Proportion Test**:
-   - Z-statistic: -2.242
-   - P-value: 0.025
-   - Conclusion: The difference in conversion rates between the treatment and control groups is statistically significant at the 0.05 level.
+#### 3. Two-Sample Proportion Test:
+- **Z-statistic**: -2.242
+- **P-value**: 0.025
+- **Conclusion**: The difference in conversion rates is statistically significant.
 
-4. **Logistic Regression**:
-
-   | Variable           | Coefficient | Std Err | Z-value | P>|z| | Odds Ratio |
+#### 4. Logistic Regression:
+| Variable           | Coefficient | Std Err | Z-value | P>|z| | Odds Ratio |
 |--------------------|-------------|---------|---------|------|------------|
 | Intercept          | -2.0904     | 0.027   | -76.314 | 0.000 | N/A        |
 | Treatment_yes      | 0.0703      | 0.031   | 2.242   | 0.025 | 1.073      |
 | New_images_yes     | -0.0044     | 0.031   | -0.141  | 0.888 | 0.996      |
 
+- The treatment group has a significant positive effect on conversion rates, with an odds ratio of 1.073, meaning users exposed to the new design are 7.3% more likely to convert.
+- New images do not significantly affect conversions.
 
-
-   - The treatment group (`treatment_yes`) has a significant positive effect on conversion rates, with an odds ratio of 1.073. This means users exposed to the new design are 7.3% more likely to convert than those in the control group.
-   - The presence of new images (`new_images_yes`) does not significantly affect conversion rates (p-value = 0.888).
-
+---
 
 ### 6. Recommendations
-Based on the findings, the following recommendations are made:
-
 1. **Implement the Redesigned Landing Page**:
-   - The new design significantly increases conversion rates. It should be rolled out across the platform to maximize user engagement and sign-ups.
+   - The new design improves conversions and should be deployed platform-wide.
 
 2. **Focus on Other Design Elements**:
-   - While the addition of new images did not significantly impact conversion rates, other design elements (e.g., layout, color schemes, call-to-action placement) could be tested to further improve performance.
+   - Consider testing other design elements (e.g., layout, color schemes) to further optimize performance.
 
 3. **Monitor Post-Implementation Performance**:
-   - Continuously monitor conversion rates after implementing the new design to ensure sustained improvements.
+   - Track conversion rates after implementation to ensure sustained improvements.
 
 4. **Conduct Further Experiments**:
-   - Explore other factors that may influence conversion rates, such as user demographics, device types, or time of day.
+   - Explore additional factors like user demographics and device types to enhance understanding.
 
+---
 
 ### 7. Conclusion
-The redesigned landing page significantly improves user conversion rates, as evidenced by both the two-sample proportion test and logistic regression. The presence of new images, however, does not appear to have a meaningful impact. These findings provide clear guidance for the business to enhance its user acquisition strategy.
+The redesigned landing page led to a significant increase in user conversion rates. However, the addition of new images did not yield meaningful improvements. These insights can help the business enhance its user acquisition strategy.
 
+---
 
 ### 8. Future Studies
-To build upon this study, consider the following areas for further research:
 1. **Segmentation Analysis**:
-   - Analyze conversion rates across different user segments (e.g., age, gender, location) to identify patterns and tailor designs accordingly.
+   - Investigate conversion rates across user segments (e.g., age, location).
 
 2. **Longitudinal Impact**:
-   - Study the long-term effects of the redesigned landing page on user retention and engagement.
+   - Study the long-term effects of the redesign on user retention.
 
 3. **Multivariate Testing**:
-   - Test multiple design elements simultaneously to identify the most impactful changes.
+   - Test multiple design elements simultaneously to identify impactful changes.
 
 4. **Machine Learning Models**:
-   - Use advanced models (e.g., decision trees, random forests) to predict conversion probabilities and optimize the user journey.
+   - Leverage advanced models to predict conversion probabilities and improve the user journey.
 
+---
 
 ### 9. Limitations of the Study
 1. **Sample Size and Duration**:
-   - The study duration and sample size may limit the generalizability of the results. Longer testing periods could provide more robust insights.
+   - Limited sample size and study duration may impact generalizability.
 
 2. **External Factors**:
-   - External factors such as seasonality, marketing campaigns, or competitor activity were not accounted for in this analysis.
+   - External variables like seasonality or competitor activity were not accounted for.
 
 3. **Confounding Variables**:
-   - Although `new_images` was balanced, other unobserved variables might still influence conversion rates.
+   - Other unobserved factors may influence the results, despite balancing `new_images`.
